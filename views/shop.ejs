@@ -1,0 +1,31 @@
+<section class="page-header">
+    <div class="container">
+        <h1>Our Collection</h1>
+        <p>Choose between instant digital downloads or beautifully printed copies.</p>
+    </div>
+</section>
+
+<section class="shop-grid container">
+    <div class="product-grid">
+        <% products.forEach(product => { %>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="<%= product.image %>" alt="<%= product.name %>">
+                </div>
+                <h3><%= product.name %></h3>
+                <p class="description"><%= product.description %></p>
+                <p class="price">Digital: $<%= product.price_digital.toFixed(2) %> | Printed: $<%= product.price_printed.toFixed(2) %></p>
+                <div class="product-actions">
+                    <a href="/product/<%= product.id %>" class="btn btn-outline">Options</a>
+                    <button class="btn btn-buy" onclick="addToCart('<%= product.id %>')">Add to Cart</button>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+</section>
+
+<script>
+function addToCart(productId) {
+    window.location.href = `/product/${productId}`;
+}
+</script>
