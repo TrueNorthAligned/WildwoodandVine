@@ -1,0 +1,40 @@
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <h1>Cultivate Growth, Naturally.</h1>
+            <p>Beautifully designed planners inspired by the wild beauty of nature. Simple systems to help you live with intention.</p>
+            <a href="/shop" class="btn">Explore the Collection</a>
+        </div>
+    </div>
+</section>
+
+<section class="affirmation container">
+    <div class="affirmation-box">
+        <p class="label">Today's Affirmation</p>
+        <blockquote>"<%= affirmation %>"</blockquote>
+    </div>
+</section>
+
+<section class="featured-products container">
+    <h2>Featured Planners</h2>
+    <div class="product-grid">
+        <% products.forEach(product => { %>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="<%= product.image %>" alt="<%= product.name %>">
+                </div>
+                <h3><%= product.name %></h3>
+                <p class="price">From $<%= product.price_digital.toFixed(2) %></p>
+                <a href="/product/<%= product.id %>" class="btn btn-outline">View Details</a>
+            </div>
+        <% }) %>
+    </div>
+</section>
+
+<section class="cta-banner">
+    <div class="container">
+        <h2>Start Your Journey Today</h2>
+        <p>Join thousands of creative professionals who plan with Fern & Flourish.</p>
+        <a href="/shop" class="btn">Shop Digital Downloads</a>
+    </div>
+</section>
