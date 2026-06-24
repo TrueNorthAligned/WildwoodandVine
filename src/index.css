@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@theme {
+  --color-sage: #8FA382;
+  --color-dusty-rose: #C9A6A1;
+  --color-terracotta: #B85D4D;
+  --color-forest: #2C3E2E;
+  --color-cream: #F9F4E8;
+  --color-gold: #D4AF37;
+  
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Montserrat", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-cream text-forest font-sans;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
