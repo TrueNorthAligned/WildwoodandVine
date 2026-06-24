@@ -1,20 +1,17 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
-
-const products = [
-  { id: 1, name: 'Wildflower Suite', category: 'Suite', price: 45, image: 'https://images.unsplash.com/photo-1549849171-09f62448709e?auto=format&fit=crop&q=80&w=800' },
-  { id: 2, name: 'Mountain Fern Invitation', category: 'Invitation', price: 15, image: 'https://images.unsplash.com/photo-1510076857177-7470076d4098?auto=format&fit=crop&q=80&w=800' },
-  { id: 3, name: 'Sage & Eucalyptus RSVP', category: 'RSVP', price: 12, image: 'https://images.unsplash.com/photo-1607344645866-009c320b63e0?auto=format&fit=crop&q=80&w=800' },
-  { id: 4, name: 'Terracotta Thank You', category: 'Thank You', price: 12, image: 'https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&q=80&w=800' },
-  { id: 5, name: 'Forest Welcome Sign', category: 'Welcome Sign', price: 25, image: 'https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&q=80&w=800' },
-  { id: 6, name: 'Botanical Favor Tags', category: 'Favor Tag', price: 10, image: 'https://images.unsplash.com/photo-1513519245088-0e12902e35ca?auto=format&fit=crop&q=80&w=800' },
-];
+import { products, PRINT_UPGRADE_LINK } from '../data/products';
 
 const ProductDetail = () => {
   const { id } = useParams();
-  const product = products.find(p => p.id === parseInt(id));
+  const product = products.find(p => p.id === id);
 
-  if (!product) return <div>Product not found</div>;
+  if (!product) return (
+    <div className="py-24 px-6 bg-cream min-h-screen text-center">
+      <h1 className="text-2xl text-forest mb-4">Product not found</h1>
+      <Link to="/shop" className="text-terracotta underline">Back to Shop</Link>
+    </div>
+  );
 
   return (
     <div className="py-24 px-6 bg-cream min-h-screen">
@@ -33,26 +30,47 @@ const ProductDetail = () => {
           <div className="h-px w-full bg-forest/10 mb-8"></div>
           
           <div className="space-y-6 mb-12">
+            <h3 className="text-forest uppercase tracking-widest text-xs font-semibold">Description</h3>
+            <p className="text-forest/70 font-light leading-relaxed">
+              {product.description}
+            </p>
+            
             <h3 className="text-forest uppercase tracking-widest text-xs font-semibold">What's Included</h3>
             <ul className="space-y-2 font-light text-forest/70 list-disc list-inside">
               <li>Instant access to Canva template</li>
               <li>Fully editable text, colors, and layout</li>
-              <li>Sized to standard 5x7" (Invitation)</li>
+              <li>Standard professional sizing</li>
               <li>Unlimited downloads and lifetime access</li>
             </ul>
+
+            <div className="bg-sage/10 p-4 rounded-sm">
+               <p className="text-forest/70 text-sm italic">
+                 Canva template link will be delivered via email after purchase.
+               </p>
+            </div>
           </div>
           
           <div className="flex flex-col gap-4">
-            <button className="bg-forest text-cream py-4 uppercase tracking-widest text-sm hover:bg-sage transition-colors">
+            <a 
+              href={product.stripeLink} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="bg-forest text-cream py-4 uppercase tracking-widest text-sm hover:bg-sage transition-all text-center"
+            >
               Buy Now (Digital)
-            </button>
-            <button className="border border-forest text-forest py-4 uppercase tracking-widest text-sm hover:bg-forest hover:text-cream transition-colors">
-              Order Printed (from $1.50/ea)
-            </button>
+            </a>
+            <a 
+              href={PRINT_UPGRADE_LINK}
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="border border-forest text-forest py-4 uppercase tracking-widest text-sm hover:bg-forest hover:text-cream transition-all text-center"
+            >
+              Order Printed (+$30 Upgrade)
+            </a>
           </div>
           
           <p className="mt-8 text-xs text-forest/40 font-light italic">
-            *This is a digital product. You will receive a link to edit in Canva immediately after purchase.
+            *This is a digital product. You will receive a link to edit in Canva via email after purchase. Printed copies require the Print Upgrade.
           </p>
         </div>
       </div>
