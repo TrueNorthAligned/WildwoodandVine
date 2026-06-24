@@ -128,6 +128,66 @@ export const products = [
     description: 'Moody botanical tags for your wedding favors.',
     stripeLink: 'https://buy.stripe.com/bJe28r8Ha3y2fec0N2dEs0m',
     image: 'https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&q=80&w=800'
+  },
+  {
+    id: 'golden-hour-full-suite',
+    name: 'Golden Hour Full Suite',
+    price: 59,
+    category: 'Full Suites',
+    suite: 'Golden Hour',
+    description: 'A warm, radiant 6-item suite inspired by the desert at sunset. Includes: Invitation, RSVP Card, Thank You Card, Welcome Sign, Favor Tags, and Detail Card.',
+    stripeLink: 'https://buy.stripe.com/fZubJ18Ha0lQaXW53idEs0n',
+    image: 'https://images.unsplash.com/photo-1594913366159-1832ffefbb2f?auto=format&fit=crop&q=80&w=800'
+  },
+  {
+    id: 'golden-hour-invitation',
+    name: 'Golden Hour Invitation',
+    price: 16,
+    category: 'Invitations',
+    suite: 'Golden Hour',
+    description: 'Warm terracotta invitation with gold accents and minimalist line art.',
+    stripeLink: 'https://buy.stripe.com/8x200j7D61pU6HG9jydEs0o',
+    image: 'https://images.unsplash.com/photo-1510076857177-7470076d4098?auto=format&fit=crop&q=80&w=800'
+  },
+  {
+    id: 'golden-hour-rsvp',
+    name: 'Golden Hour RSVP Card',
+    price: 12,
+    category: 'RSVP Cards',
+    suite: 'Golden Hour',
+    description: 'Matching RSVP card for the Golden Hour collection.',
+    stripeLink: 'https://buy.stripe.com/eVqdR96z25Ga9TS9jydEs0p',
+    image: 'https://images.unsplash.com/photo-1604146639264-2adb4947c94a?auto=format&fit=crop&q=80&w=800'
+  },
+  {
+    id: 'golden-hour-thank-you',
+    name: 'Golden Hour Thank You Card',
+    price: 12,
+    category: 'Thank You Cards',
+    suite: 'Golden Hour',
+    description: 'Express your gratitude with the warm tones of a desert sunset.',
+    stripeLink: 'https://buy.stripe.com/9B6dR95uY8Smfec67mdEs0q',
+    image: 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&q=80&w=800'
+  },
+  {
+    id: 'golden-hour-welcome-sign',
+    name: 'Golden Hour Welcome Sign',
+    price: 16,
+    category: 'Signage',
+    suite: 'Golden Hour',
+    description: 'Radiant welcome sign for a warm, terracotta-themed wedding.',
+    stripeLink: 'https://buy.stripe.com/5kQ14n4qUgkO5DCeDSdEs0r',
+    image: 'https://images.unsplash.com/photo-1524143924195-2632509689df?auto=format&fit=crop&q=80&w=800'
+  },
+  {
+    id: 'golden-hour-favor-tags',
+    name: 'Golden Hour Favor Tags',
+    price: 10,
+    category: 'Favors',
+    suite: 'Golden Hour',
+    description: 'Warm botanical tags for your wedding favors.',
+    stripeLink: 'https://buy.stripe.com/cNicN7D6gkOfec53idEs0s',
+    image: 'https://images.unsplash.com/photo-1513519245088-0e12902e35ca?auto=format&fit=crop&q=80&w=800'
   }
 ];
 
