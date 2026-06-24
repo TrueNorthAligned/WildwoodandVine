@@ -21,33 +21,50 @@ const Hero = () => (
   </section>
 );
 
-const FeaturedSuites = () => (
-  <section className="py-24 px-6 bg-cream">
-    <div className="max-w-7xl mx-auto text-center mb-16">
-      <h2 className="text-4xl md:text-5xl text-forest mb-4">The Collection</h2>
-      <div className="h-1 w-20 bg-sage mx-auto"></div>
-    </div>
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-7xl mx-auto">
-      {[1, 2, 3].map((i) => (
-        <div key={i} className="group cursor-pointer">
-          <Link to="/shop">
-            <div className="overflow-hidden bg-sage/10 aspect-[3/4] mb-6 relative">
-               <div className="absolute inset-0 bg-forest/5 group-hover:bg-forest/0 transition-colors duration-500"></div>
-               <img 
-                 src={`https://images.unsplash.com/photo-1549849171-09f62448709e?auto=format&fit=crop&q=80&w=800&i=${i}`} 
-                 alt="Wedding Suite" 
-                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-               />
-            </div>
-            <h3 className="text-2xl text-forest mb-2">Wildflower Dreams</h3>
-            <p className="text-forest/60 font-sans text-sm uppercase tracking-widest mb-4">Complete Suite</p>
-            <p className="text-terracotta font-serif italic text-lg">Digital Template from 5</p>
-          </Link>
-        </div>
-      ))}
-    </div>
-  </section>
-);
+const FeaturedSuites = () => {
+  const featured = [
+    {
+      id: 'wildflower-meadow-full-suite',
+      name: 'Wildflower Meadow',
+      price: 69,
+      image: 'https://images.unsplash.com/photo-1549849171-09f62448709e?auto=format&fit=crop&q=80&w=800'
+    },
+    {
+      id: 'moonlit-forest-full-suite',
+      name: 'Moonlit Forest',
+      price: 59,
+      image: 'https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&q=80&w=800'
+    }
+  ];
+
+  return (
+    <section className="py-24 px-6 bg-cream">
+      <div className="max-w-7xl mx-auto text-center mb-16">
+        <h2 className="text-4xl md:text-5xl text-forest mb-4">The Collection</h2>
+        <div className="h-1 w-20 bg-sage mx-auto"></div>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+        {featured.map((suite) => (
+          <div key={suite.id} className="group cursor-pointer">
+            <Link to={`/product/${suite.id}`}>
+              <div className="overflow-hidden bg-sage/10 aspect-[3/4] mb-6 relative">
+                 <div className="absolute inset-0 bg-forest/5 group-hover:bg-forest/0 transition-colors duration-500"></div>
+                 <img 
+                   src={suite.image} 
+                   alt={suite.name} 
+                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                 />
+              </div>
+              <h3 className="text-2xl text-forest mb-2">{suite.name}</h3>
+              <p className="text-forest/60 font-sans text-sm uppercase tracking-widest mb-4">Complete Suite</p>
+              <p className="text-terracotta font-serif italic text-lg">Digital Template ${suite.price}</p>
+            </Link>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+};
 
 const ProcessSection = () => (
   <section className="py-24 px-6 bg-sage/10">
