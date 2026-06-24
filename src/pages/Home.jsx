@@ -34,6 +34,12 @@ const FeaturedSuites = () => {
       name: 'Moonlit Forest',
       price: 59,
       image: 'https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&q=80&w=800'
+    },
+    {
+      id: 'golden-hour-full-suite',
+      name: 'Golden Hour',
+      price: 59,
+      image: 'https://images.unsplash.com/photo-1594913366159-1832ffefbb2f?auto=format&fit=crop&q=80&w=800'
     }
   ];
 
@@ -43,7 +49,7 @@ const FeaturedSuites = () => {
         <h2 className="text-4xl md:text-5xl text-forest mb-4">The Collection</h2>
         <div className="h-1 w-20 bg-sage mx-auto"></div>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-7xl mx-auto">
         {featured.map((suite) => (
           <div key={suite.id} className="group cursor-pointer">
             <Link to={`/product/${suite.id}`}>
